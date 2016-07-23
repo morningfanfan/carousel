@@ -1,7 +1,7 @@
 {
   "name": "carousel",
   "version": "1.0.0",
-  "description": "",
+  "description": "project carousel",
   "main": "carousel.entry.js",
   "dependencies": {
     "react": "^15.2.1",
