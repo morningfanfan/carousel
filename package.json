@@ -1,0 +1,30 @@
+{
+  "name": "carousel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "carousel.entry.js",
+  "dependencies": {
+    "react": "^15.2.1",
+    "react-addons-css-transition-group": "^15.2.1",
+    "webpack": "^1.13.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.11.4",
+    "babel-loader": "^6.2.4",
+    "jsx-loader": "^0.13.2",
+    "webpack": "^1.13.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/morningfanfan/carousel.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/morningfanfan/carousel/issues"
+  },
+  "homepage": "https://github.com/morningfanfan/carousel#readme"
+}

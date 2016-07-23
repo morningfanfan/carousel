@@ -1,9 +1,10 @@
 
 var ReactCSSTransitionGroup = require('react-addons-css-transition-group');
+var React = require('react');
 
 var ImageCarousel = React.createClass({
   propTypes: {
-    imageSrc:" ../img/1.png"
+    imageSrc: "img/1.png"
   },
   render: function() {
     return (

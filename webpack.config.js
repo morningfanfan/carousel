@@ -1,25 +1,24 @@
-var webpack = require('webpack');
-var commonsPlugin = new webpack.optimize.CommonsChunkPlugin('common.js');
+var webpack = require("webpack");
 
 module.exports = {
     entry: {
-        entry1: './jsx/carousel.jsx'
+        entry1: "./src/carousel.jsx"
     },
     output: {
         path: __dirname,
-        filename: 'carousel.entry.js'
+        filename: "carousel.entry.js"
     },
     resolve: {
-        extensions: ['', '.js', '.jsx']
+        extensions: ["", ".js", ".jsx"]
     },
     module: {
         loaders: [{
             test: /\.js$/,
-            loader: 'babel-loader'
+            loader: "babel-loader"
         }, {
             test: /\.jsx$/,
-            loader: 'babel-loader!jsx-loader?harmony'
+            loader: "babel-loader!jsx-loader?harmony"
         }]
     },
-    plugins: [commonsPlugin]
+    plugins: []
 };
