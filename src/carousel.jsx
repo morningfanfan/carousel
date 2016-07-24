@@ -18,34 +18,55 @@ var React = require('react');
 //  }
 //});
 var ImageTrasition = React.createClass({
-  propTypes: {
-    imageSrc:['../img/1.png','../img/1.png'],
-    width:window.innerWidth
-  },
+//  propTypes: {
+ //   imageSrc:['../img/1.png','../img/1.png'],
+ //   width:window.innerWidth
+ // },
   getInitialState: {
-    flag = 0
+    carousel_row = 0,
+    n = 2
   },
   handleClickLeft: function() {
-    $("div#showing").animate({
-      left:'-=this.props.width'
-    },{
-      speed:200,
-      queue:false
-    });
-    $("div#come_right").animate({
-      left:'-=this.props.width'
-    },{
-      speed:200,
-      queue:false
-    });
+//    $("div#showing").animate({
+ //     left:'-=this.props.width'
+  //  },{
+ //     speed:200,
+  //    queue:false
+ //   });
+ //   $("div#come_right").animate({
+//     left:'-=this.props.width'
+ //   },{
+ //     speed:200,
+ //     queue:false
+ //   });
+   setState(
+     {carousel_row:carousel_row + 1}
+   )
+  },
+   handleClickRight: function() {
+   setState(
+     {carousel_row:carousel_row - 1}
+   )
   },
   render: function() {
-  <div id="carousel">
-    <div id="come_left" img={imageSrc[flag-1]}></div>
-    <div id="showing" img={imageSrc[flag]}></div>
-    <div id="come_right" img={imageSrc[flag+1]}></div>
+      showing = <OnDisplay row={this.state.carousel_row % this.state.n}/>
+  return(
+    <div id="carousel">
       <div id="leftButton" onClick={handleClickLeft}></div>
-      <div id="rightButton"></div>
-  </div>
+      {showing}
+      <div id="rightButton" onClick={handleClickRight}></div>
+    </div>
+  )
+  }
+})
+
+var OnDisplay = React.createClass({
+ propTypes: {
+    imageSrc:['../img/1.png','../img/1.png']
+  },
+  render: function() {
+    return(
+      <a href="#"><img src={this.props.imageSrc[row]}></img></a>
+    )
   }
 })
