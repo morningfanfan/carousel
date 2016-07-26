@@ -26,15 +26,23 @@ var ImageTrasition = React.createClass({
     carouselImg:[
       {
         id:0,
-        imgSrc:"#",
+        imgSrc:"../img/IMAGE1.png",
         imgGoal:"#"
       },{
         id:1,
-        imgSrc:"#",
+        imgSrc:"../img/IMAGE2.png",
         imgGoal:"#"
       },{
         id:2,
-        imgSrc:"#",
+        imgSrc:"../img/IMAGE3.png",
+        imgGoal:"#"
+      },{
+        id:3,
+        imgSrc:"../img/IMAGE4.png",
+        imgGoal:"#"
+      },{
+        id:4,
+        imgSrc:"../img/IMAGE5.png",
         imgGoal:"#"
       }
     ]
@@ -122,7 +130,7 @@ var ImageTrasition = React.createClass({
 
 var OnDisplay = React.createClass({
  propTypes: {
-    imageSrc:['../img/1.png','../img/1.png','#']
+    imageSrc:['../img/IMAGE1.png','../img/IMAGE2.png','../img/IMAGE3.png','../img/IMAGE4.png','../img/IMAGE5.png']
   },
   render: function() {
     return(
