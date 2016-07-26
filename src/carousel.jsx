@@ -135,3 +135,4 @@ var OnDisplay = React.createClass({
     )
   }
 })
+ReactDOM.render(<ImageTrasition/>, document.getElementById('whole_container'));
