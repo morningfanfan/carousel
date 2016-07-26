@@ -8,6 +8,18 @@
     from{left: 0px;}
     to{left: -960px;}
 }
+#whole_container{
+    min-width: 960px;
+    width:100%;
+}
 #carousel_container{
     width:960px;
+}
+
+
+
+.on_stop{
+    width:640px;
+    margin-top: 10%;
+
 }

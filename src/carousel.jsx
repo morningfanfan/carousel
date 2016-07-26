@@ -48,11 +48,11 @@ var ImageTrasition = React.createClass({
     ]
   },
   getInitialState: {
-    carousel_row = 0,
-    n = this.props.carouselImg.length,//$.ajax....
+    carousel_row : 0,
+    n : this.props.carouselImg.length,//$.ajax....
    // ct_left:null,
-    transitionStartLeft = false,
-    transitionStartRight = false
+    transitionStartLeft : false,
+    transitionStartRight : false
   },
   handleClickLeft: function() {
 //    $("div#showing").animate({
