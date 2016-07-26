@@ -4,6 +4,7 @@
   "description": "project carousel",
   "main": "carousel.entry.js",
   "dependencies": {
+    "jquery": "^3.1.0",
     "react": "^15.2.1",
     "react-addons-css-transition-group": "^15.2.1",
     "webpack": "^1.13.1"
