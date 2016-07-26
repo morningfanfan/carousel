@@ -22,8 +22,63 @@ var ImageTrasition = React.createClass({
  //   imageSrc:['../img/1.png','../img/1.png'],
  //   width:window.innerWidth
  // },
-  propTypes: {
-    carouselImg:[
+
+  getInitialState: function() {
+    return {carousel_row : 0,
+    n : this.props.carouselImg.length,//$.ajax....
+   // ct_left:null,
+    transitionStartLeft : false,
+    transitionStartRight : false
+  };
+ },
+  handleClickLeft: function() {
+//    $("div#showing").animate({
+ //     left:'-=this.props.width'
+  //  },{
+ //     speed:200,
+  //    queue:false
+ //   });
+ //   $("div#come_right").animate({
+//     left:'-=this.props.width'
+ //   },{
+ //     speed:200,
+ //     queue:false
+ //   });
+
+  // setState(
+    // {carousel_row:this.state.carousel_row + 1}
+  // )
+   setState(
+     {//ct_left:carousel_transition,
+      // carousel_row:this.state.carousel_row+1,
+       transitionStartRight : true
+     }
+   )
+  },
+   handleClickRight: function() {
+   setState(
+     {
+       carousel_row:this.state.carousel_row-1,
+       transitionStartLeft : true 
+     }
+   )
+  },  
+     change:function(){
+       if(this.state.transitionStartLeft){
+              setState({
+              carousel_row:this.state.carousel_row-1,
+              transitionStartLeft:false
+               })
+       }
+       if(this.state.transitionStartRight){
+              setState({
+              carousel_row:this.state.carousel_row+1,
+              transitionStartRight:false
+               })
+       }
+   },
+  render: function() {
+      var  carouselImg = [
       {
         id:0,
         imgSrc:"../img/IMAGE1.png",
@@ -46,64 +101,9 @@ var ImageTrasition = React.createClass({
         imgGoal:"#"
       }
     ]
-  },
-  getInitialState: {
-    carousel_row : 0,
-    n : this.props.carouselImg.length,//$.ajax....
-   // ct_left:null,
-    transitionStartLeft : false,
-    transitionStartRight : false
-  },
-  handleClickLeft: function() {
-//    $("div#showing").animate({
- //     left:'-=this.props.width'
-  //  },{
- //     speed:200,
-  //    queue:false
- //   });
- //   $("div#come_right").animate({
-//     left:'-=this.props.width'
- //   },{
- //     speed:200,
- //     queue:false
- //   });
-
-  // setState(
-    // {carousel_row:this.state.carousel_row + 1}
-  // )
-   setState(
-     {//ct_left:carousel_transition,
-      // carousel_row:this.state.carousel_row+1,
-       transitionStartRight = true
-     }
-   )
-  },
-   handleClickRight: function() {
-   setState(
-     {
-       carousel_row:this.state.carousel_row-1,
-       transitionStartLeft = true 
-     }
-   )
-  },  
-     change:function(){
-       if(this.state.transitionStartLeft){
-              setState({
-              carousel_row:this.state.carousel_row-1,
-              transitionStartLeft:false
-               })
-       }
-       if(this.state.transitionStartRight){
-              setState({
-              carousel_row:this.state.carousel_row+1,
-              transitionStartRight:false
-               })
-       }
-   },
-  render: function() {
-      var showing = <OnDisplay row={this.state.carousel_row % this.state.n}/>;
-      var showing_l = <OnDisplay row={this.state.carousel_row-1 % this.state.n}/>;
-      var showing_r = <OnDisplay row={this.state.carousel_row+1 % this.state.n}/>;
+      var showing = <OnDisplay row={this.state.carousel_row % this.state.n} data={this.carouselImg}/>;
+      var showing_l = <OnDisplay row={this.state.carousel_row-1 % this.state.n} data={this.carouselImg}/>;
+      var showing_r = <OnDisplay row={this.state.carousel_row+1 % this.state.n} data={this.carouselImg}/>;
       document.getElementById("carousel_on").addEventListener('animationend',change);
     //  var classes = React.addons.classSet({
      //   'cl':this.state.cl,
@@ -129,12 +129,9 @@ var ImageTrasition = React.createClass({
 })
 
 var OnDisplay = React.createClass({
- propTypes: {
-    imageSrc:['../img/IMAGE1.png','../img/IMAGE2.png','../img/IMAGE3.png','../img/IMAGE4.png','../img/IMAGE5.png']
-  },
   render: function() {
     return(
-      <a href="#"><img src={this.props.imageSrc[this.props.row]}></img></a>
+      <a href="#"><img src={this.props.data[this.props.row]}></img></a>
     )
   }
 })
