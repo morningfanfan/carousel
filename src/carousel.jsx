@@ -1,5 +1,7 @@
 
 var React = require('react');
+var ReactDOM = require('react-dom');
+
 //var ReactCSSTransitionGroup = require('react-addons-css-transition-group');
 
 
@@ -135,4 +137,5 @@ var OnDisplay = React.createClass({
     )
   }
 })
+
 ReactDOM.render(<ImageTrasition/>, document.getElementById('whole_container'));
