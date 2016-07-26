@@ -1,0 +1,13 @@
+.carousel_transition {
+    position: relative;
+    width: 100%;
+    animation: 0.5s ct_left;
+    animation-fill-mode: forwards;
+}
+@keyframes ct_left{
+    from{left: 0px;}
+    to{left: -960px;}
+}
+#carousel_container{
+    width:960px;
+}
