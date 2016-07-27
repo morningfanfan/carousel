@@ -26,11 +26,12 @@ var ImageTrasition = React.createClass({
  // },
 
   getInitialState: function() {
-    return {carousel_row : 0,
-    n : this.props.carouselImg.length,//$.ajax....
+    return {
+      carousel_row : 0,
+      n : 5,//$.ajax....
    // ct_left:null,
-    transitionStartLeft : false,
-    transitionStartRight : false
+      transitionStartLeft : false,
+      transitionStartRight : false
   };
  },
   handleClickLeft: function() {
@@ -50,7 +51,7 @@ var ImageTrasition = React.createClass({
   // setState(
     // {carousel_row:this.state.carousel_row + 1}
   // )
-   setState(
+   this.setState(
      {//ct_left:carousel_transition,
       // carousel_row:this.state.carousel_row+1,
        transitionStartRight : true
@@ -58,9 +59,9 @@ var ImageTrasition = React.createClass({
    )
   },
    handleClickRight: function() {
-   setState(
+   this.setState(
      {
-       carousel_row:this.state.carousel_row-1,
+       //carousel_row:this.state.carousel_row-1,
        transitionStartLeft : true 
      }
    )
@@ -79,34 +80,18 @@ var ImageTrasition = React.createClass({
                })
        }
    },
+     mod:function(num,n){
+       var tmp = num % n;
+       if(tmp>=0)
+       return tmp;
+       else
+       return n+tmp;
+     },
   render: function() {
-      var  carouselImg = [
-      {
-        id:0,
-        imgSrc:"../img/IMAGE1.png",
-        imgGoal:"#"
-      },{
-        id:1,
-        imgSrc:"../img/IMAGE2.png",
-        imgGoal:"#"
-      },{
-        id:2,
-        imgSrc:"../img/IMAGE3.png",
-        imgGoal:"#"
-      },{
-        id:3,
-        imgSrc:"../img/IMAGE4.png",
-        imgGoal:"#"
-      },{
-        id:4,
-        imgSrc:"../img/IMAGE5.png",
-        imgGoal:"#"
-      }
-    ]
-      var showing = <OnDisplay row={this.state.carousel_row % this.state.n} data={this.carouselImg}/>;
-      var showing_l = <OnDisplay row={this.state.carousel_row-1 % this.state.n} data={this.carouselImg}/>;
-      var showing_r = <OnDisplay row={this.state.carousel_row+1 % this.state.n} data={this.carouselImg}/>;
-      document.getElementById("carousel_on").addEventListener('animationend',change);
+      var showing = <OnDisplay row={this.mod(this.state.carousel_row,this.state.n)}/>;
+      var showing_l = <OnDisplay row={this.mod(this.state.carousel_row-1,this.state.n)}/>;
+      var showing_r = <OnDisplay row={this.mod(this.state.carousel_row+1,this.state.n)}/>;
+      
     //  var classes = React.addons.classSet({
      //   'cl':this.state.cl,
      //   'cr':this.atate.cr,
@@ -118,13 +103,15 @@ var ImageTrasition = React.createClass({
     var class_o = this.state.transitionStartRight ? 'on_move_right' : 'on_stop';
     var class_r = this.state.transitionStartLeft ? 'right_move_left' : 'right_stop';
     var class_r = this.state.transitionStartRight ? 'right_move_right' : 'right_stop';
+    var e = document.getElementById("carousel_on");
+    if(e){addEventListener('animationend',change,false)};
   return(
     <div id="carousel">
-      <div id="leftButton" onClick={handleClickLeft}></div>
-      <div id="carousel_left" className={class_l}>{showing_l}</div>
-      <div id="carousel_on" className={classes_o}>{showing}</div>
-      <div id="carousel_right" className={classes_r}>{showing_r}</div>
-      <div id="rightButton" onClick={handleClickRight}></div>
+      <div id="leftButton" onClick={this.handleClickLeft}></div>
+      <div id="carousel_left" className={this.class_l}>{showing_l}</div>
+      <div id="carousel_on" className={this.classes_o}>{showing}</div>
+      <div id="carousel_right" className={this.classes_r}>{showing_r}</div>
+      <div id="rightButton" onClick={this.handleClickRight}></div>
     </div>
   )
   }
@@ -133,9 +120,30 @@ var ImageTrasition = React.createClass({
 var OnDisplay = React.createClass({
   render: function() {
     return(
-      <a href="#"><img src={this.props.data[this.props.row]}></img></a>
+      <a href="#"><img src={carouselImg[this.props.row].imgSrc}></img></a>
     )
   }
 })
-
+      var  carouselImg = [
+      {
+        id:0,
+        imgSrc:"./img/IMAGE1.png",
+        imgGoal:"#"
+      },{
+        id:1,
+        imgSrc:"./img/IMAGE2.png",
+        imgGoal:"#"
+      },{
+        id:2,
+        imgSrc:"./img/IMAGE3.png",
+        imgGoal:"#"
+      },{
+        id:3,
+        imgSrc:"./img/IMAGE4.png",
+        imgGoal:"#"
+      },{
+        id:4,
+        imgSrc:"./img/IMAGE5.png",
+        imgGoal:"#"
+      }]
 ReactDOM.render(<ImageTrasition/>, document.getElementById('whole_container'));

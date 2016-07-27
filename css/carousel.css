@@ -14,13 +14,120 @@
 }
 #carousel_container{
     width:960px;
+    margin-top: 40px;
 }
 
 
 
 .on_stop{
     width:640px;
-    margin-top: 40px;
     margin:0 auto;
-
+}
+.left_stop{
+    width: 400px;
+    position: relative;
+    left:0px;
+}
+.right_stop{
+    width: 400px;
+    position: relative;
+    right:0px;
+}
+on_move_left{
+    position: absolute;
+    animation: 0.5s on_move_left;
+    animation-fill-mode: forwards;
+}
+@keyframes on_move_left{
+    from{
+        margin:0 auto;
+        width:640px;
+        height: auto;
+        }
+    to{
+        left: 0px;
+        width:400px;
+        height: auto;
+        }
+}
+on_move_right{
+    position: absolute;
+    animation: 0.5s on_move_right;
+    animation-fill-mode: forwards;
+}
+@keyframes on_move_right{
+    from{
+        margin:0 auto;
+        width:640px;
+        height: auto;
+        }
+    to{
+        right: 0px;
+        width:400px;
+        height: auto;
+        }
+}
+left_move_left{
+    position: absolute;
+    animation: 0.01s left_move_left;
+    animation-fill-mode: forwards;
+}
+@keyframes left_move_left{
+    from{
+          width: 400px;
+          position: relative;
+          left:0px;
+        }
+    to{
+        visibility: hidden;
+        }
+}
+left_move_right{
+    position: absolute;
+    animation: 0.5s left_move_right;
+    animation-fill-mode: forwards;
+}
+@keyframes left_move_right{
+    from{
+        left: 0px;
+        width:400px;
+        height: auto;
+        }
+    to{
+        margin:0 auto;
+        width:640px;
+        height: auto;
+        }
+}
+right_move_right{
+    position: absolute;
+    animation: 0.01s left_move_left;
+    animation-fill-mode: forwards;
+}
+@keyframes left_move_left{
+    from{
+          width: 400px;
+          position: relative;
+          right:0px;
+        }
+    to{
+        visibility: hidden;
+        }
+}
+right_move_left{
+    position: absolute;
+    animation: 0.5s left_move_right;
+    animation-fill-mode: forwards;
+}
+@keyframes left_move_right{
+    from{
+        lright: 0px;
+        width:400px;
+        height: auto;
+        }
+    to{
+        margin:0 auto;
+        width:640px;
+        height: auto;
+        }
 }
