@@ -13,11 +13,8 @@ module.exports = {
     },
     module: {
         loaders: [{
-            test: /\.js$/,
-            loader: "babel-loader"
-        }, {
-            test: /\.jsx$/,
-            loader: "babel-loader!jsx-loader?harmony"
+            test: /\.jsx?$/,
+            loader: "babel-loader?presets[]=es2015&presets[]=react"
         }]
     },
     plugins: []
