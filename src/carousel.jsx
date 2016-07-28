@@ -87,80 +87,6 @@ var ImageTrasition = React.createClass({
         var showing_l = <OnDisplay row={this.mod(this.state.carousel_row - 1, this.state.n) }/>;
         var showing_r = <OnDisplay row={this.mod(this.state.carousel_row + 1, this.state.n) }/>;
 
-<<<<<<< HEAD
-  // setState(
-    // {carousel_row:this.state.carousel_row + 1}
-  // )
-   this.setState(
-     {//ct_left:carousel_transition,
-      // carousel_row:this.state.carousel_row+1,
-       transitionStartRight : true
-     }
-   )
-  },
-   handleClickRight: function() {
-   this.setState(
-     {
-       //carousel_row:this.state.carousel_row-1,
-       transitionStartLeft : true 
-     }
-   )
-  },  
-     change:function(){
-       if(this.state.transitionStartLeft){
-              setState({
-              carousel_row:this.state.carousel_row-1,
-              transitionStartLeft:false
-               })
-       }
-       if(this.state.transitionStartRight){
-              setState({
-              carousel_row:this.state.carousel_row+1,
-              transitionStartRight:false
-               })
-       }
-   },
-     mod:function(num,n){
-       var tmp = num % n;
-       if(tmp>=0)
-       return tmp;
-       else
-       return n+tmp;
-     },
-  render: function() {
-      var showing = <OnDisplay row={this.mod(this.state.carousel_row,this.state.n)}/>;
-      var showing_l = <OnDisplay row={this.mod(this.state.carousel_row-1,this.state.n)}/>;
-      var showing_r = <OnDisplay row={this.mod(this.state.carousel_row+1,this.state.n)}/>;
-      
-    //  var classes = React.addons.classSet({
-     //   'cl':this.state.cl,
-     //   'cr':this.atate.cr,
-    //    'co':this.state.co
-    //  });
-    var class_l = this.state.transitionStartLeft ? 'left_move_left' : 'left_stop';
-    var class_l = this.state.transitionStartRight ? 'left_move_right' : 'left_stop';
-    var class_o = this.state.transitionStartLeft ? 'on_move_left' : 'on_stop';
-    var class_o = this.state.transitionStartRight ? 'on_move_right' : 'on_stop';
-    var class_r = this.state.transitionStartLeft ? 'right_move_left' : 'right_stop';
-    var class_r = this.state.transitionStartRight ? 'right_move_right' : 'right_stop';
-    var e = document.getElementById("carousel_on");
-    if(e){addEventListener('animationend',change,false)};
-  return(
-    <div id="carousel">
-      <div id="leftButton" onClick={this.handleClickLeft}></div>
-      <div id="carousel_left" className={class_l}>{showing_l}</div>
-      <div id="carousel_on" className={class_o}>{showing}</div>
-      <div id="carousel_right" className={class_r}>{showing_r}</div>
-      <div id="rightButton" onClick={this.handleClickRight}></div>
-    </div>
-  )
-  }
-=======
-        //  var classes = React.addons.classSet({
-        //   'cl':this.state.cl,
-        //   'cr':this.atate.cr,
-        //    'co':this.state.co
-        //  });
         var class_l = this.state.transitionStartLeft ? 'left_move_left' : 'left_stop';
         var class_l = this.state.transitionStartRight ? 'left_move_right' : 'left_stop';
         var class_o = this.state.transitionStartLeft ? 'on_move_left' : 'on_stop';
@@ -181,7 +107,7 @@ var ImageTrasition = React.createClass({
             </div>
         )
     }
->>>>>>> bd0da1c16a7c16a8b73fbbacf9b23b7691fd9521
+    
 })
 
 var OnDisplay = React.createClass({
