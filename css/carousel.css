@@ -14,24 +14,24 @@
 }
 #carousel{
     width:960px;
-    margin-top: 40px;
+    padding-top: 40px;
     margin: 0 auto;
+    position: relative;
 }
 
 
 .on_stop{
     width:640px;
     left:160px;
-    position: relative;
     height: 320px;
-    bottom:200px;
     z-index: 1;
-    background-size: cover;    
+    background-size: cover; 
+    position: relative;
+    bottom: 260px; 
 }
 .left_stop{
     width: 400px;
     position: relative;
-    top: 60px;
     height: 200px;
     background-size: cover;
 }
@@ -40,30 +40,29 @@
     position: relative;
     height: 200px;
     left:640px;
-    bottom: 460px;
+    bottom: 520px;
     background-size: cover;
 }
 .on_move_left{
-    position: relative;
+    
     animation: 1s on_move_left; 
     animation-fill-mode: forwards;
-    z-index: 1;
     background-size: cover; 
+    position: relative;
 }
 @keyframes on_move_left{
     from{
-        width:640px;
-        left: 160px;
-        bottom:200px;
-        top:0px;
-        height: 320px;
+    width:640px;
+    left:160px;
+    height: 320px;
+    z-index: 1;
+    bottom: 60px; 
         }
     to{
-        left: 0px;
-        width:400px;
-        top: 60px;
-        bottom: 100px;
-        height: 200px;
+    width:400px;
+    left:0px;
+    height: 200px;
+    bottom: 0px; 
         }
 }
 .on_move_right{
@@ -74,17 +73,16 @@
 }
 @keyframes on_move_right{
     from{
-        width:560px;
+        width:640px;
         left: 160px;
-        bottom:200px;
-        top:0px;
+        bottom:260px;
         height: 320px;
+        z-index: 1;
         }
     to{
         left: 640px;
         width:400px;
-        top: 60px;
-        bottom: 100px;
+        bottom: 320px;
         height: 200px;
         }
 }
@@ -102,34 +100,35 @@
         left: 0px;
         width:400px;
         height: 200px;
-        top:60px;
         }
     to{
         left: 160px;
         width:640px;
         height: 320px;
-        top:120px;
-        z-index: 2;
+        bottom: 40px;
         }
 }
 .right_move_right{
     visibility: hidden;
 }
 .right_move_left{
-    position: absolute;
-    animation: 0.5s left_move_right;
+    position: relative;
+    animation: 1s right_move_left;
     animation-fill-mode: forwards;
+    background-size: cover;
 }
-@keyframes left_move_right{
+@keyframes right_move_left{
     from{
-        lright: 0px;
-        width:400px;
-        height: auto;
+    width: 400px;
+    height: 200px;
+    left:640px;
+    bottom: 320px;
         }
     to{
-        margin:0 auto;
-        width:640px;
-        height: auto;
+    width: 640px;
+    height: 320px;
+    left:160px;
+    bottom: 260px;
         }
 }
 #rightButton {

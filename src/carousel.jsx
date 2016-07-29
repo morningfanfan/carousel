@@ -100,9 +100,9 @@ var ImageTrasition = React.createClass({
         return (
             <div id="carousel">
                 <div id="leftButton" onClick={this.handleClickLeft}></div>
-                <a href='#'><div id="carousel_left" className={class_l} style={{'backgroundImage':'url(' + showing_l + ')'}}></div></a>
-                <a href='#'><div id="carousel_on" className={class_o} style={{'backgroundImage':'url(' + showing + ')'}}></div></a>
-                <a href='#'><div id="carousel_right" className={class_r} style={{'backgroundImage':'url(' + showing_r + ')'}}></div></a>
+                <div id="carousel_left" className={class_l} style={{'backgroundImage':'url(' + showing_l + ')'}}></div>
+                <div id="carousel_on" className={class_o} style={{'backgroundImage':'url(' + showing + ')'}}></div>
+                <div id="carousel_right" className={class_r} style={{'backgroundImage':'url(' + showing_r + ')'}}></div>
                 <div id="rightButton" onClick={this.handleClickRight}></div>
             </div>
         )
