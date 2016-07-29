@@ -95,7 +95,7 @@ var ImageTrasition = React.createClass({
         var class_r = this.state.transitionStartLeft ? 'right_move_left' : this.state.transitionStartRight ? 'right_move_right' : 'right_stop';
         var e = document.getElementById("carousel_on");
         if (e) {
-            addEventListener('animationend', this.change, false)
+            addEventListener('animationend', this.change)
         };
         return (
             <div id="carousel">

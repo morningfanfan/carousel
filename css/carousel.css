@@ -44,13 +44,9 @@
     background-size: cover;
 }
 .on_move_left{
-    width:640px;
-    left:160px;
     position: relative;
-    animation: 0.5s on_move_left; 
+    animation: 2s on_move_left; 
     animation-fill-mode: forwards;
-    height: 320px;
-    bottom:200px;
     z-index: 1;
     background-size: cover; 
 }
@@ -60,12 +56,14 @@
         left: 160px;
         bottom:200px;
         top:0px;
+        height: 320px;
         }
     to{
         left: 0px;
         width:400px;
         top: 60px;
         bottom: 100px;
+        height: 200px;
         }
 }
 .on_move_right{
