@@ -64,13 +64,13 @@ var ImageTrasition = React.createClass({
     change: function() {
         if (this.state.transitionStartLeft) {
             this.setState({
-                carousel_row: this.state.carousel_row - 1,
+                carousel_row: this.state.carousel_row + 1,
                 transitionStartLeft: false
             })
         }
         if (this.state.transitionStartRight) {
             this.setState({
-                carousel_row: this.state.carousel_row + 1,
+                carousel_row: this.state.carousel_row - 1,
                 transitionStartRight: false
             })
         }
