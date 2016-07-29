@@ -83,9 +83,12 @@ var ImageTrasition = React.createClass({
             return n + tmp;
     },
     render: function() {
-        var showing = <OnDisplay row={this.mod(this.state.carousel_row, this.state.n) }/>;
-        var showing_l = <OnDisplay row={this.mod(this.state.carousel_row - 1, this.state.n) }/>;
-        var showing_r = <OnDisplay row={this.mod(this.state.carousel_row + 1, this.state.n) }/>;
+        var row = this.mod(this.state.carousel_row, this.state.n);
+        var row_l = this.mod(this.state.carousel_row-1, this.state.n);
+        var row_r = this.mod(this.state.carousel_row+1, this.state.n);
+        var showing = carouselImg[row].imgSrc;
+        var showing_l = carouselImg[row_l].imgSrc;
+        var showing_r = carouselImg[row_r].imgSrc;
 
         var class_l = this.state.transitionStartLeft ? 'left_move_left' : 'left_stop';
         var class_l = this.state.transitionStartRight ? 'left_move_right' : 'left_stop';
@@ -95,14 +98,14 @@ var ImageTrasition = React.createClass({
         var class_r = this.state.transitionStartRight ? 'right_move_right' : 'right_stop';
         var e = document.getElementById("carousel_on");
         if (e) {
-            addEventListener('animationend', change, false)
+            addEventListener('animationend', this.change, false)
         };
         return (
             <div id="carousel">
                 <div id="leftButton" onClick={this.handleClickLeft}></div>
-                <div id="carousel_left" className={class_l}>{showing_l}</div>
-                <div id="carousel_on" className={class_o}>{showing}</div>
-                <div id="carousel_right" className={class_r}>{showing_r}</div>
+                <a href='#'><div id="carousel_left" className={class_l} style={{'backgroundImage':'url(' + showing_l + ')'}}></div></a>
+                <a href='#'><div id="carousel_on" className={class_o} style={{'backgroundImage':'url(' + showing + ')'}}></div></a>
+                <a href='#'><div id="carousel_right" className={class_r} style={{'backgroundImage':'url(' + showing_r + ')'}}></div></a>
                 <div id="rightButton" onClick={this.handleClickRight}></div>
             </div>
         )
@@ -110,13 +113,6 @@ var ImageTrasition = React.createClass({
     
 })
 
-var OnDisplay = React.createClass({
-    render: function() {
-        return (
-            <a href="#"><img src={carouselImg[this.props.row].imgSrc}></img></a>
-        )
-    }
-})
 var carouselImg = [{
     id: 0,
     imgSrc: "./img/IMAGE1.png",

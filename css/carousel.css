@@ -12,45 +12,63 @@
     min-width: 960px;
     width:100%;
 }
-#carousel_container{
+#carousel{
     width:960px;
     margin-top: 40px;
+    margin: 0 auto;
 }
-
 
 
 .on_stop{
     width:640px;
-    margin:0 auto;
+    left:160px;
+    position: relative;
+    height: 320px;
+    bottom:200px;
+    z-index: 1;
+    background-size: cover;    
 }
 .left_stop{
     width: 400px;
     position: relative;
-    left:0px;
+    top: 60px;
+    height: 200px;
+    background-size: cover;
 }
 .right_stop{
     width: 400px;
     position: relative;
-    right:0px;
+    height: 200px;
+    left:640px;
+    bottom: 460px;
+    background-size: cover;
 }
-on_move_left{
-    position: absolute;
+.on_move_left{
+    width:640px;
+    left:160px;
+    position: relative;
     animation: 0.5s on_move_left;
     animation-fill-mode: forwards;
+    height: 320px;
+    bottom:200px;
+    z-index: 1;
+    background-size: cover; 
 }
 @keyframes on_move_left{
     from{
-        margin:0 auto;
         width:640px;
-        height: auto;
+        left: 160px;
+        bottom:200px;
+        top:0px;
         }
     to{
         left: 0px;
         width:400px;
-        height: auto;
+        top: 60px;
+        bottom: 100px;
         }
 }
-on_move_right{
+.on_move_right{
     position: absolute;
     animation: 0.5s on_move_right;
     animation-fill-mode: forwards;
@@ -67,7 +85,7 @@ on_move_right{
         height: auto;
         }
 }
-left_move_left{
+.left_move_left{
     position: absolute;
     animation: 0.01s left_move_left;
     animation-fill-mode: forwards;
@@ -82,7 +100,7 @@ left_move_left{
         visibility: hidden;
         }
 }
-left_move_right{
+.left_move_right{
     position: absolute;
     animation: 0.5s left_move_right;
     animation-fill-mode: forwards;
@@ -99,7 +117,7 @@ left_move_right{
         height: auto;
         }
 }
-right_move_right{
+.right_move_right{
     position: absolute;
     animation: 0.01s left_move_left;
     animation-fill-mode: forwards;
@@ -114,7 +132,7 @@ right_move_right{
         visibility: hidden;
         }
 }
-right_move_left{
+.right_move_left{
     position: absolute;
     animation: 0.5s left_move_right;
     animation-fill-mode: forwards;
