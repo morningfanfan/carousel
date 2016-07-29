@@ -47,7 +47,7 @@
     width:640px;
     left:160px;
     position: relative;
-    animation: 0.5s on_move_left;
+    animation: 0.5s on_move_left; 
     animation-fill-mode: forwards;
     height: 320px;
     bottom:200px;

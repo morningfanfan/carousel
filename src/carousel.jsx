@@ -80,7 +80,7 @@ var ImageTrasition = React.createClass({
         if (tmp >= 0)
             return tmp;
         else
-            return n + tmp;
+            return n + tmp; 
     },
     render: function() {
         var row = this.mod(this.state.carousel_row, this.state.n);
