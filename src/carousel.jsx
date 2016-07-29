@@ -90,12 +90,9 @@ var ImageTrasition = React.createClass({
         var showing_l = carouselImg[row_l].imgSrc;
         var showing_r = carouselImg[row_r].imgSrc;
 
-        var class_l = this.state.transitionStartLeft ? 'left_move_left' : 'left_stop';
-        var class_l = this.state.transitionStartRight ? 'left_move_right' : 'left_stop';
-        var class_o = this.state.transitionStartLeft ? 'on_move_left' : 'on_stop';
-        var class_o = this.state.transitionStartRight ? 'on_move_right' : 'on_stop';
-        var class_r = this.state.transitionStartLeft ? 'right_move_left' : 'right_stop';
-        var class_r = this.state.transitionStartRight ? 'right_move_right' : 'right_stop';
+        var class_l = this.state.transitionStartLeft ? 'left_move_left' : this.state.transitionStartRight ? 'left_move_right' : 'left_stop';
+        var class_o = this.state.transitionStartLeft ? 'on_move_left' : this.state.transitionStartRight ? 'on_move_right' : 'on_stop';
+        var class_r = this.state.transitionStartLeft ? 'right_move_left' : this.state.transitionStartRight ? 'right_move_right' : 'right_stop';
         var e = document.getElementById("carousel_on");
         if (e) {
             addEventListener('animationend', this.change, false)
