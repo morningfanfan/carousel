@@ -86,13 +86,17 @@ var ImageTrasition = React.createClass({
         var row = this.mod(this.state.carousel_row, this.state.n);
         var row_l = this.mod(this.state.carousel_row-1, this.state.n);
         var row_r = this.mod(this.state.carousel_row+1, this.state.n);
+        var rr = this.mod(this.state.carousel_row+2, this.state.n);
+        var ll = this.mod(this.state.carousel_row-2, this.state.n);
         var showing = carouselImg[row].imgSrc;
         var showing_l = carouselImg[row_l].imgSrc;
         var showing_r = carouselImg[row_r].imgSrc;
+        var showing_t = this.state.transitionStartLeft ? carouselImg[rr].imgSrc : this.state.transitionStartRight ? carouselImg[ll].imgSrc : '#';
 
         var class_l = this.state.transitionStartLeft ? 'left_move_left' : this.state.transitionStartRight ? 'left_move_right' : 'left_stop';
         var class_o = this.state.transitionStartLeft ? 'on_move_left' : this.state.transitionStartRight ? 'on_move_right' : 'on_stop';
         var class_r = this.state.transitionStartLeft ? 'right_move_left' : this.state.transitionStartRight ? 'right_move_right' : 'right_stop';
+        var class_t = this.state.transitionStartLeft ? 'r' : this.state.transitionStartRight ? 'l' : 'hide';
         var e = document.getElementById("carousel_on");
         if (e) {
             e.addEventListener('animationend', this.change);
@@ -100,9 +104,10 @@ var ImageTrasition = React.createClass({
         return (
             <div id="carousel">
                 <div id="leftButton" onClick={this.handleClickLeft}></div>
-                <div id="carousel_left" className={class_l} style={{'backgroundImage':'url(' + showing_l + ')'}}></div>
+                <div id="carousel_left" className={class_l} onClick={this.handleClickLeft} style={{'backgroundImage':'url(' + showing_l + ')'}}></div>
                 <div id="carousel_on" className={class_o} style={{'backgroundImage':'url(' + showing + ')'}}></div>
-                <div id="carousel_right" className={class_r} style={{'backgroundImage':'url(' + showing_r + ')'}}></div>
+                <div id="carousel_right" className={class_r}  onClick={this.handleClickRight} style={{'backgroundImage':'url(' + showing_r + ')'}}></div>
+                <div id="tmp" className={class_t} style={{'backgroundImage':'url(' + showing_t + ')'}}></div>
                 <div id="rightButton" onClick={this.handleClickRight}></div>
             </div>
         )
