@@ -15,6 +15,7 @@
     animation-fill-mode: forwards;
     background-size: cover;
     position: absolute;
+    box-shadow: 0 0 20px rgba(132, 131, 131, 0.8);
 }
 
 @keyframes bigger {
@@ -24,14 +25,12 @@
         height: 320px;
         z-index: 1;
         top: 0px;
-        box-shadow: 0 0 0 rgba(34, 34, 34, 0.3);
     }
     to {
         width: 652.8px;
         left: 153.6px;
         height: 326.4px;
         top: -3.2px;
-        box-shadow: 0 0 20px rgba(132, 131, 131, 0.8);
     }
 }
 
@@ -43,6 +42,7 @@
     background-size: cover;
     position: absolute;
     top: 0;
+    box-shadow: 0 0 20px rgba(132, 131, 131, 0.8);
 }
 
 .left_stop {
@@ -51,6 +51,7 @@
     height: 200px;
     top: 60px;
     background-size: cover;
+    box-shadow: 0 0 20px rgba(132, 131, 131, 0.8);
 }
 
 .left_stop:hover {
@@ -58,6 +59,7 @@
     animation-fill-mode: forwards;
     background-size: cover;
     position: absolute;
+    box-shadow: 0 0 20px rgba(132, 131, 131, 0.8);
 }
 
 @keyframes biggerl {
@@ -66,14 +68,12 @@
         left: 0px;
         height: 200px;
         top: 60px;
-        box-shadow: 0 0 0 rgba(34, 34, 34, 0.3);
     }
     to {
         width: 404px;
         left: -2px;
         height: 202px;
         top: 59x;
-        box-shadow: 0 0 20px rgba(132, 131, 131, 0.8);
     }
 }
 
@@ -84,6 +84,7 @@
     left: 640px;
     top: 60px;
     background-size: cover;
+    box-shadow: 0 0 20px rgba(132, 131, 131, 0.8);
 }
 
 .right_stop:hover {
@@ -91,6 +92,7 @@
     animation-fill-mode: forwards;
     background-size: cover;
     position: absolute;
+    box-shadow: 0 0 20px rgba(132, 131, 131, 0.8);
 }
 
 @keyframes biggerr {
@@ -99,14 +101,12 @@
         left: 640px;
         height: 200px;
         top: 60px;
-        box-shadow: 0 0 0 rgba(34, 34, 34, 0.3);
     }
     to {
         width: 404px;
         left: 638px;
         height: 202px;
         top: 59x;
-        box-shadow: 0 0 20px rgba(132, 131, 131, 0.8);
     }
 }
 
@@ -115,6 +115,7 @@
     animation-fill-mode: forwards;
     background-size: cover;
     position: absolute;
+    box-shadow: 0 0 20px rgba(132, 131, 131, 0.8);
 }
 
 @keyframes on_move_left {
@@ -138,6 +139,7 @@
     animation: 1s on_move_right;
     animation-fill-mode: forwards;
     background-size: cover;
+    box-shadow: 0 0 20px rgba(132, 131, 131, 0.8);
 }
 
 @keyframes on_move_right {
@@ -160,6 +162,7 @@
     background-size: cover;
     animation: 1s left_move_left;
     animation-fill-mode: forwards;
+    box-shadow: 0 0 20px rgba(132, 131, 131, 0.8);
 }
 
 @keyframes left_move_left {
@@ -178,6 +181,7 @@
     animation-fill-mode: forwards;
     position: absolute;
     background-size: cover;
+    box-shadow: 0 0 20px rgba(132, 131, 131, 0.8);
 }
 
 @keyframes left_move_right {
@@ -202,6 +206,7 @@
     animation: 1s right_move_right;
     animation-fill-mode: forwards;
     z-index: -1;
+    box-shadow: 0 0 20px rgba(132, 131, 131, 0.8);
 }
 
 @keyframes right_move_right {
@@ -221,6 +226,7 @@
     animation: 1s right_move_left;
     animation-fill-mode: forwards;
     background-size: cover;
+    box-shadow: 0 0 20px rgba(132, 131, 131, 0.8);
 }
 
 @keyframes right_move_left {
@@ -242,8 +248,8 @@
     width: 30px;
     height: 30px;
     position: absolute;
-    left: 510px;
-    top: 330px;
+    left: 1010px;
+    top: 300px;
     background-size: cover;
 }
 
@@ -251,8 +257,7 @@
     width: 30px;
     height: 30px;
     position: absolute;
-    left: 200px;
-    top: 330px;
+    top: 300px;
     background-size: cover;
 }
 
@@ -261,6 +266,7 @@
     animation: 0.5s l;
     animation-fill-mode: forwards;
     background-size: cover;
+    box-shadow: 0 0 20px rgba(132, 131, 131, 0.8);
 }
 
 @keyframes l {
@@ -280,6 +286,7 @@
     animation: 0.5s r;
     animation-fill-mode: forwards;
     background-size: cover;
+    box-shadow: 0 0 20px rgba(132, 131, 131, 0.8);
 }
 
 @keyframes r {
