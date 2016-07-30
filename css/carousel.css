@@ -81,7 +81,7 @@
     width: 400px;
     position: absolute;
     height: 200px;
-    left: 640px;
+    left: 560px;
     top: 60px;
     background-size: cover;
     box-shadow: 0 0 20px rgba(132, 131, 131, 0.8);
@@ -98,13 +98,13 @@
 @keyframes biggerr {
     from {
         width: 400px;
-        left: 640px;
+        left: 560px;
         height: 200px;
         top: 60px;
     }
     to {
         width: 404px;
-        left: 638px;
+        left: 558px;
         height: 202px;
         top: 59x;
     }
@@ -150,7 +150,7 @@
         top: 0px;
     }
     to {
-        left: 640px;
+        left: 560px;
         width: 400px;
         height: 200px;
         top: 60px;
@@ -213,7 +213,7 @@
     from {
         width: 400px;
         height: 200px;
-        left: 640px;
+        left: 560px;
         top: 60px;
     }
     to {
@@ -233,7 +233,7 @@
     from {
         width: 400px;
         height: 200px;
-        left: 640px;
+        left: 560px;
         top: 60px;
     }
     to {
@@ -248,7 +248,7 @@
     width: 30px;
     height: 30px;
     position: absolute;
-    left: 1010px;
+    left: 930px;
     top: 300px;
     background-size: cover;
 }
@@ -296,7 +296,7 @@
     to {
         width: 400px;
         height: 200px;
-        left: 640px;
+        left: 560px;
         top: 60px;
         z-index: -1;
     }
