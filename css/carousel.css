@@ -239,17 +239,21 @@
 }
 
 #rightButton {
-    margin-left: -10px;
-    width: 10px;
-    height: 10px;
-    background-color: red;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 510px;
+    top: 330px;
+    background-size: cover;
 }
 
 #leftButton {
-    margin-left: -10px;
-    width: 10px;
-    height: 10px;
-    background-color: red;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 200px;
+    top: 330px;
+    background-size: cover;
 }
 
 .l {
