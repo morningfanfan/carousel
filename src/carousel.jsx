@@ -1,29 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-//var ReactCSSTransitionGroup = require('react-addons-css-transition-group');
-
-
-//var ImageCarousel = React.createClass({
-// propTypes: {
-// imageSrc:" ../img/1.png"
-// },
-//render: function() {
-// return (
-//    <div>
-//     <ReactCSSTransitionGroup transitionName="carousel" transitionEnterTimeout={300} transitionLeaveTimeout={300}>
-//       <img src={this.props.imageSrc} key={this.props.imageSrc} />
-//      </ReactCSSTransitionGroup>
-//     </div>
-//   );
-//  }
-//});
-var ImageTrasition = React.createClass({
-    //  propTypes: {
-    //   imageSrc:['../img/1.png','../img/1.png'],
-    //   width:window.innerWidth
-    // },
-
+export var ImageTrasition = React.createClass({
     getInitialState: function() {
         return {
             carousel_row: 0,
@@ -34,24 +12,7 @@ var ImageTrasition = React.createClass({
         };
     },
     handleClickLeft: function() {
-        //    $("div#showing").animate({
-        //     left:'-=this.props.width'
-        //  },{
-        //     speed:200,
-        //    queue:false
-        //   });
-        //   $("div#come_right").animate({
-        //     left:'-=this.props.width'
-        //   },{
-        //     speed:200,
-        //     queue:false
-        //   });
-
-        // setState(
-        // {carousel_row:this.state.carousel_row + 1}
-        // )
-        this.setState({ //ct_left:carousel_transition,
-            // carousel_row:this.state.carousel_row+1,
+        this.setState({
             transitionStartRight: true
         })
     },
@@ -80,14 +41,16 @@ var ImageTrasition = React.createClass({
         if (tmp >= 0)
             return tmp;
         else
-            return n + tmp; 
+            return n + tmp;
     },
     render: function() {
         var row = this.mod(this.state.carousel_row, this.state.n);
-        var row_l = this.mod(this.state.carousel_row-1, this.state.n);
-        var row_r = this.mod(this.state.carousel_row+1, this.state.n);
-        var rr = this.mod(this.state.carousel_row+2, this.state.n);
-        var ll = this.mod(this.state.carousel_row-2, this.state.n);
+        var row_l = this.mod(this.state.carousel_row - 1, this.state.n);
+        var row_r = this.mod(this.state.carousel_row + 1, this.state.n);
+
+        var rr = this.mod(this.state.carousel_row + 2, this.state.n);
+        var ll = this.mod(this.state.carousel_row - 2, this.state.n);
+
         var showing = carouselImg[row].imgSrc;
         var showing_l = carouselImg[row_l].imgSrc;
         var showing_r = carouselImg[row_r].imgSrc;
@@ -112,7 +75,7 @@ var ImageTrasition = React.createClass({
             </div>
         )
     }
-    
+
 })
 
 var carouselImg = [{
@@ -136,4 +99,5 @@ var carouselImg = [{
     imgSrc: "./img/IMAGE5.png",
     imgGoal: "#"
 }]
+
 ReactDOM.render(<ImageTrasition/>, document.getElementById('whole_container'));
